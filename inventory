@@ -1,0 +1,6 @@
+[group1]
+host1 ansible_host=192.168.1.200 ansible_user=user1
+
+[all:vars]
+ansible_connection=paramiko
+ansible_python_interpreter=/usr/bin/python3

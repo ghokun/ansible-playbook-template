@@ -1,0 +1,18 @@
+---
+- name: Set hostname
+  hostname:
+    name: "{{ inventory_hostname }}"
+  notify:
+    - Reboot # Just for showcase
+
+- name: Copy file
+  copy:
+    src: "files/example.txt"
+    dest: "/home/{{ ansible_user }}/example.txt"
+    mode: 0644
+
+- name: Create file from template
+  template:
+    src: "templates/example2.txt.j2"
+    dest: "/home/{{ ansible_user }}/example2.txt"
+    mode: 0644
